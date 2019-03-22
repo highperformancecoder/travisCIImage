@@ -1,0 +1,5 @@
+FROM opensuse/tumbleweed
+ADD . /root
+RUN zypper addrepo https://download.opensuse.org/repositories/home:hpcoder1/openSUSE_Tumbleweed/home:hpcoder1.repo
+RUN zypper --gpg-auto-import-keys refresh
+RUN zypper --non-interactive install -y -l gcc-c++ tcl-devel tk-devel boost-devel json_spirit-devel librsvg2-devel gsl-devel cairo-devel pango-devel readline-devel
