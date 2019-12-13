@@ -8,4 +8,4 @@ RUN zypper --non-interactive install -y -l boost-devel libboost_date_time-devel 
 # Minsky specific packages here
 RUN zypper --non-interactive install -y -l librsvg2-devel octave-cli blas-devel firefox xvfb-run xorg-x11-fonts xauth which soci-devel  csvprintf texlive-latex-bin-bin texlive-epstopdf-bin latex2html linkchecker
 # SciDAVis specific packages
-RUN zypper --non-interactive install -y -l libqwt-qt5-5-devel libqt5-qtsvg-devel libqwtplot3d-qt5-0-devel libtirpc-devel muparser-devel glu-devellibqwt-qt5-5-devel libqt5-qtsvg-devel  libqt5-qtwayland libqwtplot3d-qt5-0-devel libtirpc-devel muparser-devel libboost_python3-devel python3-devel glu-devel python3-numpy liborigin-devel
+RUN zypper install -y -l libqwt-qt5-5-devel libqt5-qtsvg-devel  libqt5-qtwayland libqwtplot3d-qt5-0-devel libtirpc-devel muparser-devel libboost_python3-devel python3-devel glu-devel python3-numpy liborigin-devel libqt5-linguist-devel
