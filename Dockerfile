@@ -10,3 +10,9 @@ RUN zypper --non-interactive install -y -l boost-devel libboost_date_time-devel 
 RUN zypper --non-interactive install -y -l librsvg2-devel octave-cli blas-devel firefox xvfb-run xorg-x11-fonts xauth which soci-devel  csvprintf texlive latex2html
 # SciDAVis specific packages
 RUN zypper install -y -l libqwt-qt5-5-devel libqt5-qtsvg-devel  libqt5-qtwayland libqwtplot3d-qt5-0-devel libtirpc-devel muparser-devel libboost_python3-devel python3-devel glu-devel python3-numpy liborigin-devel libqt5-linguist-devel
+# fix texlive bug: https://forums.opensuse.org/showthread.php/528778-mktexfmt-ERROR-user-mode-but-path-setup-is-sys-type-bailing-out
+RUN mkdir /run/texlive
+RUN touch /var/run/texlive/run-hyphen
+RUN touch /var/run/texlive/run-fmtutil.language
+RUN touch /var/run/texlive/run-fmtutil.refresh
+RUN /usr/share/texmf/texconfig/update
