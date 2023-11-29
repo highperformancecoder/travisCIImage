@@ -5,7 +5,7 @@ RUN zypper addrepo https://download.opensuse.org/repositories/home:hpcoder1/15.4
 RUN zypper --gpg-auto-import-keys refresh
 RUN zypper --non-interactive install -y -l git make ccache gcc-c++ clang tcl-devel tk-devel libdb-4_8-devel gsl-devel cairo-devel pango-devel readline-devel gdbm-devel libXss-devel unittest++-devel libxml2-devel libtiff-devel libopenssl-devel
 # Boost
-RUN zypper --non-interactive install -y -l boost-devel libboost_date_time-devel libboost_filesystem-devel libboost_program_options-devel libboost_regex-devel libboost_system-devel libboost_thread-devel libboost_python3-devel 
+RUN zypper --non-interactive install -y -l libboost_headers1_75_0-devel libboost_thread1_75_0-devel libboost_date_time1_75_0-devel libboost_filesystem1_75_0-devel libboost_program_options1_75_0-devel libboost_regex1_75_0-devel libboost_system1_75_0-devel libboost_python-py3-1_75_0-devel 
 
 # Minsky specific packages here
 RUN zypper --non-interactive install -y -l librsvg2-devel octave-cli blas-devel firefox xvfb-run xorg-x11-fonts xauth which csvprintf rsvg-convert libclipboard-devel
@@ -19,7 +19,7 @@ RUN ln -sf /usr/local/lib/node_modules/jest/bin/jest.js /usr/local/bin/jest
 #RUN zypper --non-interactive install unuran
 
 # SciDAVis specific packages
-RUN zypper install -y -l libqwt-qt5-5-devel libqt5-qtsvg-devel  libqt5-qtwayland libtirpc-devel muparser-devel libboost_python3-devel python3-devel glu-devel python3-numpy liborigin-devel libqt5-linguist-devel
+RUN zypper install -y -l libqwt-qt5-5-devel libqt5-qtsvg-devel  libqt5-qtwayland libtirpc-devel muparser-devel python3-devel glu-devel python3-numpy liborigin-devel libqt5-linguist-devel
 
 # LaTeX
 RUN zypper --non-interactive install -y -l  texlive-collection-latex latex2html texlive-epstopdf-bin texlive-pstricks
