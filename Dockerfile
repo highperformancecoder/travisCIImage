@@ -1,9 +1,9 @@
 FROM opensuse/leap:15.5
 ADD . /root
 #RUN zypper dup -y -l
-RUN zypper addrepo https://download.opensuse.org/repositories/home:hpcoder1/15.4/home:hpcoder1.repo
+RUN zypper addrepo https://download.opensuse.org/repositories/home:hpcoder1/15.5/home:hpcoder1.repo
 RUN zypper --gpg-auto-import-keys refresh
-RUN zypper --non-interactive install -y -l git make ccache gcc-c++ clang tcl-devel tk-devel libdb-4_8-devel gsl-devel cairo-devel pango-devel readline-devel gdbm-devel libXss-devel unittest++-devel libxml2-devel libtiff-devel libopenssl-devel
+RUN zypper --non-interactive install -y -l git make ccache gcc13-c++ clang tcl-devel tk-devel libdb-4_8-devel gsl-devel cairo-devel pango-devel readline-devel gdbm-devel libXss-devel unittest++-devel libxml2-devel libtiff-devel libopenssl-devel
 # Boost
 RUN zypper --non-interactive install -y -l libboost_headers1_75_0-devel libboost_thread1_75_0-devel libboost_date_time1_75_0-devel libboost_filesystem1_75_0-devel libboost_program_options1_75_0-devel libboost_regex1_75_0-devel libboost_system1_75_0-devel libboost_python-py3-1_75_0-devel 
 
