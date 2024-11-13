@@ -1,4 +1,4 @@
-FROM opensuse/leap:15.5
+FROM opensuse/leap:15.6
 ADD . /root
 #RUN zypper dup -y -l
 RUN zypper addrepo https://download.opensuse.org/repositories/home:hpcoder1/15.5/home:hpcoder1.repo
@@ -12,6 +12,7 @@ RUN zypper --non-interactive install -y -l tar librsvg2-devel octave-cli blas-de
 RUN zypper --non-interactive install -y -l npm nodejs20-devel
 RUN npm install -g jest
 RUN npm install -g ts-node
+RUN npm install -g exitzero
 RUN ln -sf /usr/local/lib/node_modules/jest/bin/jest.js /usr/local/bin/jest
 
 # For EcoLab
